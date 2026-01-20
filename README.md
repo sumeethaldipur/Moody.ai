@@ -10,5 +10,5 @@ A research paper has been published based on this project in the 4th Internation
 
 Paper Link - https://ieeexplore.ieee.org/document/10169983
 
-### This is a group project by Sumeet Haldipur, Pritam Gaikwad and Aryan Dhami for Sardar Patel Institute of Technology
+### This is a group project by Sumeet Haldipur, Pritam Gaikwad, and Aryan Dhami for Sardar Patel Institute of Technology
 
