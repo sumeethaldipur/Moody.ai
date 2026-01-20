@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="main-box">
+    <div class="">
+        {% if img %}
+            <img class="img-container" id="bg" src="{{ url_for('static', filename='images/capture/'+img)}}">
+            <div class="choice">
+                {% if login %}
+                    {% for key,value in face %}
+                        <div class="choice-box">
+                            <a href="{{url_for('unknown_recommend', mood=value, img=img)}}">{{key}}</a>
+                        </div>
+                    {% endfor %}
+                        
+                {% else %}
+                    {% if valid %}
+                        <div class="choice-box">
+                            <p>User is not recognized in image</p>
+                        </div>
+                    {% elif reana %}
+                        <form  method="post" action="/rating" class="rating">
+                            <div class="choice-box">
+                                <p>How is your satisfaction</p>
+                            </div>
+                            <div class="choice-box" style="width:250px; display:flex"> 
+                                <p style="margin-right: 5px;">0</p>
+                                
+                                <div style="width:400px"><input class="e-rating__range" id= "rate"name="rating" type="range" value="2.5" min="0" max="5" step="0.1">
+                                </div>
+                                <p style="margin-left: 5px;">5</p>
+                            </div>
+                            <input type="hidden" name="id" value="{{mood_id}}"> 
+                                <button type="submit" class="choice-box">
+                                    Submit
+                                </button>
+                        </form>
+                        
+                    {% else %}
+                        <div class="choice-box">
+                            <a href="{{url_for('recommend', id=mood_id)}}" >OK</a>
+                        </div>
+                        
+                    {% endif %}    
+                {% endif %}
+
+                <div class="choice-box">
+                    {% if reana %}
+                    <a href="{{url_for('redetect', id=mood_id)}}">Take Again</a>
+                    {% elif login %}
+                    <a href="{{url_for('again__detect')}}">Take Again</a>
+                    {% else %}
+                    <a href="{{url_for('again_detect', id= mood_id)}}">Take Again</a>
+                    {% endif %}
+                </div>
+            </div>
+        {% elif feed %}
+
+        <img class="img-container" id="bg" src="{{ url_for('video_feed')}}">
+
+        <div class="choice">
+            <div class="choice-box">
+                {% if reana %}
+                <a href="{{url_for('recapture', id=mood_id)}}">Capture</a>
+                {% else %}
+                <a href="{{url_for('capture')}}">Capture </a>
+                {% endif %}
+            </div>
+        </div>
+
+        {% else %}
+            {% if reana %}
+            <a href="{{url_for('redetect', id=mood_id)}}">
+                <img src="{{ url_for('static' , filename='images/analyze_click_btn.png') }}" alt="" srcset="" class="analyze-btn" id="image">
+            </a>
+            {% else %}
+            <a href="{{url_for('detect')}}">
+                <img src="{{ url_for('static' , filename='images/analyze_click_btn.png') }}" alt="" srcset="" class="analyze-btn" id="image">
+            </a>
+            {% endif %}
+            <div class="analyze-text-btn-desc">Click here to analyze</div>
+        {% endif %}
+    </div>
+</div>
+<script>
+    $("#home").removeClass('menu-list-item-highlighted');
+    $("#history").removeClass('menu-list-item-highlighted');
+    $("#analyze").addClass('menu-list-item-highlighted');
+
+</script>
+<script>
+    const slider = document.getElementById("rate")
+    const min = slider.min
+    const max = slider.max
+    const value = slider.value
+
+    slider.style.background = `linear-gradient(to right, #ffd700 0%, #ffd700 ${(value-min)/(max-min)*100}%, #DEE2E6 ${(value-min)/(max-min)*100}%, #DEE2E6 100%)`
+
+    slider.oninput = function() {
+        this.style.background = `linear-gradient(to right, #ffd700 0%, #ffd700 ${(this.value-this.min)/(this.max-this.min)*100}%, #DEE2E6 ${(this.value-this.min)/(this.max-this.min)*100}%, #DEE2E6 100%)`
+    };
+</script>
+
+
+{% endblock %}

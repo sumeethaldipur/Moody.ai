@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="content-section">
+        <div class="col-md-6 content-box offset-md-1">
+            <h1>Emotion Based Activity Recommendation</h1>
+            <div class="description">Get a deeper insight into your emotions and see what <br> you can do to improve your mood!</div>
+            <div class="outer-btn-box">
+                <div class="left-btn">
+                    <div class="primary-btn">
+                        <a href="{{url_for('analyze')}}">Analyze your mood</a>
+                    </div>
+                </div>
+                <div class="right-btn">
+                    <div class="primary-btn">
+                        Get more Information
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+    </div>
+{% endblock %}

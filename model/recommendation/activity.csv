@@ -1,0 +1,53 @@
+Title,Mood,Category,Description
+Badminton,"Angry, Neutral",Sport,Engage in a game of badminton with your friends. View results for places near you to play badminton!
+Gym,"Angry, Sad",Sport,Go to the gym and energize yourself 
+Boxing,"Angry, Sad",Sport,Practice boxing and relieve your stress 
+Chess,"Happy, Neutral",Sport,Practice chess and sharpen your mind 
+Cycling,"Angry, Sad, Neutral, Happy",Sport,Go for a cycle ride to relief stress
+Cricket,"Angry, Sad, Neutral, Happy",Sport,Engage in a game of cricket with your friends. View results for places near you to play cricket!
+Football,"Angry, Sad, Neutral, Happy",Sport,Play football energize yourself and relieve stress
+Golf,"Angry, Sad, Neutral, Happy",Sport,Play golf energize yourself and relieve stress
+Gymnastics,"Angry, Sad, Neutral, Happy",Sport,Do gymnastics and relieve your anxiety
+Tennis,"Angry, Sad, Neutral, Happy",Sport,Play tennis and cool down your nerves
+Squash,"Angry, Sad, Neutral, Happy",Sport,Play squash and boost your self esteem
+Swimming,"Angry, Sad, Neutral, Happy",Sport,Do some swimming and enegerize yourself
+Table Tennis,"Angry, Sad, Neutral, Happy",Sport,Play table tennis and cool down your nerves
+Driving,"Angry, Sad, Neutral, Happy",Fun,Drive your vehicle and cool your mind
+Volleyball,"Angry, Sad, Neutral, Happy",Sport,Play volleyball energize yourself and relieve stress
+Athletics,"Angry, Sad, Neutral, Happy",Sport,Do some athletics and relieve stress
+Basketball,"Angry, Sad, Neutral, Happy",Sport,Play basketball energize yourself and relieve stress
+Handball,"Angry, Sad, Neutral, Happy",Sport,Play football energize yourself and relieve stress
+Hockey,"Angry, Sad, Neutral, Happy",Sport,Play hockey energize yourself and relieve stress
+Skating,"Angry, Sad, Neutral, Happy",Sport,Do some skating and improve your resilience
+Trekking,"Angry, Sad, Neutral, Happy",Fun,Do some trek and boost your energy
+Rock Climbing,"Angry, Sad, Neutral, Happy",Sport,Do some rock climbing and boost your energy
+Amusement Park,"Angry, Sad, Neutral, Happy",Fun,Visit some Amusement Park with family and friends
+Fun Zone,"Angry, Sad, Neutral, Happy",Fun,Visit some Fun Zone areas with family and friends
+Meditation,"Angry, Sad, Neutral, Fear, Disgust",Sport,Meditate yourself and cool your mind
+Yoga,"Angry, Sad, Neutral, Fear, Disgust",Sport,Do some yoga and boost energy and kick off stress
+Therapy,"Angry, Sad, Fear",Sport,Visit therapist and take medication
+Walking,"Angry, Sad, Neutral, Happy",Fun,Get some walk and enegerize yourself
+Jogging,"Angry, Sad, Neutral, Happy",Fun,Go do some jogging with peaceful songs and cool down mind
+Running ,"Angry, Sad, Neutral, Happy",Sport,Do some running and energize yourself
+Dancing,"Angry, Sad, Neutral, Happy",Fun,Do some dance and energize yourself
+Singing,"Sad, Neutral, Happy",Fun,Listen to some songs to peaceful songs and calm your mind
+Eating,"Sad, Neutral, Happy",Fun,Eat some good food and improve your mood
+Dog Cafe,"Sad, Neutral, Happy",Fun,Go to dog cafe and improve your mood
+Cat Cafe,"Sad, Neutral, Happy",Fun,Go to cat cafe and improve your mood
+Concerts,"Sad, Neutral, Happy",Fun,Visit live concerts and improve your mental mood
+Stand Up Comedy,"Sad, Neutral, Happy",Fun,See some stand up comedy and kick of stress 
+Sleeping,"Sad, Neutral, Happy",Fun,Take a sleep cause sleep is main factor for good health and good mood
+Parks / Gardens,"Sad, Neutral, Happy",Fun,Go to parks or gardens and come close to nature to relive stress
+Zoo,"Sad, Neutral, Happy, Surprise ",Fun,Visit zoo and calm your mind 
+Sit in the sun,"Sad, Neutral, Happy, Surprise ",Fun,"Sit in the sun, energize yourself with vitamin D and boost yourself"
+Solve Puzzle,"Sad, Neutral, Happy, Surprise ",Fun,Do some fun activity like solving puzzle
+Painting,"Sad, Neutral, Happy, Surprise, Disgust ",Fun,Do some painting and cool your mind
+Cooking,"Sad, Neutral, Happy, Surprise ",Fun,Cook a good food and eat it with good mood
+Museum,"Sad, Neutral, Happy, Surprise ",Fun,Visit museum and sharpen your mind 
+Spend time with friends,"Angry, Sad, Neutral, Happy",Fun,Spend some good time with near and dear ones like friends
+Call a friend or family member,"Angry, Sad, Neutral, Happy",Fun,Call a friend or family and discuss the beautiful memories
+Look at old photos,"Angry, Sad, Neutral, Happy",Fun,Look at the old photos and remember the joyful memories
+Have a picnic,"Sad, Neutral, Happy, Surprise ",Fun,Have some good picnic and relive all the stress
+Take bath and be fresh,"Sad, Neutral, Happy, Surprise, Disgust ",Fun,Take a shower bath and be fresh and cool your mind
+Appreciate Yourself,"Angry, Sad, Fear, Neutral, Happy, Surprise, Disgust ",Fun,Appreciate yourself with good quotes and affermations
+Spend Time With Family,"Angry, Sad, Fear, Neutral, Happy, Surprise, Disgust ",Fun,Spend some good time with near and dear ones like your family members

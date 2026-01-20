@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="main-analayze-container">
+    <form class="analyze-box history" method="post" action="/editprofile" enctype="multipart/form-data">
+      <div class="main-title-login text-center">
+        Profile
+      </div>
+      <img src="{{url_for('static' , filename='images/profile/'+user.img)}}" height="100" width="100" style="border-radius: 20px; margin-left: 100px; border:3px solid #614f4f;">
+        <p class="label-login">Email</p>
+        <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="{{user.email}}" aria-describedby="emailHelp" placeholder="Enter email">
+        <p class="label-login">Name</p>
+        <input type="text" class="form-control" id="UsernameField" name="name" value="{{user.name}}" aria-describedby="emailHelp" placeholder="Enter username">
+        <p class="label-login">Date of birth</p>
+        <input type="date" class="form-control" name="date" value="{{user.date}}" id="DateField" aria-describedby="emailHelp">
+        <p class="label-login">Password</p>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password" aria-describedby="emailHelp" placeholder="Enter password">
+        <p class="label-login">Profile </p>
+        <input type="file" class="form-control" id="exampleInputPassword1" name="file" aria-describedby="emailHelp" placeholder="Enter password">
+        <button type='submit' class="login-btn text-center">
+            Save
+        </button>
+      </form>
+  
+  
+  
+  
+  
+  
+  
+  <div class="analyze-box history">
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Before Mood</th>
+          <th>Activities Perform</th>
+          <th>After Mood</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for mood in history %}
+        {% set act = mood.activity.items() %}
+        <tr>
+          <td rowspan='{{mood.activity|length}}'>{{mood.date}}</td>
+          <td rowspan='{{mood.activity|length}}'><img src="{{url_for('static' , filename='images/capture/'+mood.bimg)}}" height="100" width="150"><br>{{mood.bmood}}</td>
+            
+          {% set key,value = mood.activities[0] %}
+          <td>
+              {% if key=="Movie" %} 
+                Watch Movie: {{value}}
+              {% elif key=="Book" %} 
+                Read Book: {{value}}
+              {% elif key=="Songs" %} 
+                Listen Songs: {{value[0]}}, {{value[1]}}, {{value[2]}}
+              {% elif key=="Sport" %} 
+                Do Sport: {{value}}
+              {% elif key=="Fun" %} 
+                Fun Activity: {{value}}
+              {% endif %}
+          </td>
+          <td rowspan='{{mood.activity|length}}'>
+            {% if mood.aimg is not none %}
+            <img src="{{url_for('static' , filename='images/capture/'+mood.aimg)}}" height="100" width="150"><br>{{mood.amood}}
+            {% endif %}
+          </td>
+        </tr>
+        {% set a = mood.activities.pop(0) %}
+        {% for key,value in mood.activities %}
+        <tr>
+          <td>
+                  {% if key=="Movie" %} 
+                    Watch Movie: {{value}}
+                  {% elif key=="Book" %} 
+                    Read Book: {{value}}
+                  {% elif key=="Songs" %} 
+                    Listen Songs: {{value[0]}}, {{value[1]}}, {{value[2]}}
+                  {% elif key=="Sport" %} 
+                    Do Sport: {{value}}
+                  {% elif key=="Fun" %} 
+                    Fun Activity: {{value}}
+                  {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+{% endblock %}

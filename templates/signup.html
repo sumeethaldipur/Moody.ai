@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}   
+<div class="right-side-img-container">
+</div>
+<div class="left-side-img-container">
+</div>
+<div class="main-container">
+        <form class="black-login-card" method="post" enctype="multipart/form-data">
+            <div class="main-title-login text-center">
+                Moody.ai
+            </div>
+            <p class="text-center">Welcome! Let’s  get you started.</p>
+            <p class="label-login">Email</p>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="{{request.form['email']}}" aria-describedby="emailHelp" placeholder="Enter email">
+            <p class="label-login">Username</p>
+            <input type="text" class="form-control" id="UsernameField" name="name" value="{{request.form['name']}}" aria-describedby="emailHelp" placeholder="Enter username">
+            <p class="label-login">Date of birth</p>
+            <input type="date" class="form-control" name="date" value="{{request.form['date']}}" id="DateField" aria-describedby="emailHelp">
+            <p class="label-login">Password</p>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" value="{{request.form['password']}}" aria-describedby="emailHelp" placeholder="Enter password">
+            <p class="label-login">Profile </p>
+            <input type="file" class="form-control" id="exampleInputPassword1" name="file" aria-describedby="emailHelp" placeholder="Enter password">
+            <button type='submit' class="login-btn text-center">
+                Sign up
+            </button>
+            <p class="down-signup-label text-center">Already have an account? <span class="create-account-label"><a href="{{url_for('login')}}">Sign in.</a></span></p>
+        </form>
+    </div>
+{% endblock %}

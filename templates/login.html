@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="right-side-img-container">
+    </div>
+    <div class="left-side-img-container">
+    </div>
+    <div class="main-container">
+        
+        <form class="black-login-card" method="post">
+            <div class="main-title-login text-center">
+                Moody.ai
+            </div>
+            <p class="text-center">Login to Moody.ai</p>
+            <p class="label-login">Email</p>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="{{request.form['email']}}" aria-describedby="emailHelp" placeholder="Enter email">
+            <div class="password-container">
+                <p class="label-login">Password </p>
+                <p class="forget-passwd-label">Forgot Password?</p>
+            </div>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" value="{{request.form['password']}}" aria-describedby="emailHelp" placeholder="Enter password">
+            <button type="submit" class="login-btn text-center">
+                Login
+            </button>
+            <div class="login-line-container">
+                <div class="col-md-5">
+                    <hr class="login-line">
+                </div>
+                <div class="col-md-2">or</div>
+                <div class="col-md-5">
+                    <hr class="login-line">
+                </div>
+            </div>
+            <p class="down-login-label">Don’t have an account ? <span class="create-account-label"><a href="{{url_for('signup')}}">Create one.</a></span></p>
+        </form>
+    </div>
+{% endblock %}

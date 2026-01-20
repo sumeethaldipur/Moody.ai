@@ -1,0 +1,222 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="main-analayze-container">
+    <div class="">
+        <div class="analyze-box">
+            <img style="border-radius:20px;" src="{{url_for('static' , filename='images/capture/'+img)}}" alt="" height=370 width=745>
+        </div>
+        <div class="analyze-box">
+            
+            <p class="white-text heading-right-side-card">Mood Diagnosis</p>
+            <div style="display:flex; justify-content: space-between;">
+                <div style="width: 50%;">
+                    <p class="white-text content-right-side-card">Name: {{name}}</p>
+                    <p class="white-text content-right-side-card">Age: {{age}} Years</p>
+                </div>
+                <div style="width: 50%;">
+                    <p class="white-text content-right-side-card">Status: <span class="red-text">{{mood}} </span></p>
+                    <p class="white-text content-right-side-card">Time: {{now}}</p>
+                </div>
+            </div>
+            
+        </div>
+          
+    </div>
+    <div class="right-side-ana analyze-box" >
+        <div class="small-card-title" style="color: #fff;">Suggested Activities</div>
+        <div class="small-cards-holder-box">
+            
+            {% if ret.Movie %}
+                {% for movie in ret.Movie %}
+                    <div class="small-card-1">
+                        <img src="{{ url_for('static' , filename='images/movie1.jpg') }}" alt="" srcset="" class="small-card-1-img">
+                        {% if not login %}
+                            {% if movie.like %}
+                                <a href="{{url_for('liked_activity', id=movie.id)}}"class="watch-btn"><span class="material-icons mdr">thumb_up_alt</span></a>
+                            {% else %}
+                                <a href="{{url_for('liked_activity', id=movie.id)}}"class="watch-btn"><span class="material-icons mdr">thumb_up_off_alt</span></a>
+                            {% endif %}
+                            {% if movie.completed %}
+                                <a href="{{url_for('complete_activity', id=movie.id)}}"class="comp-btn"><span class="material-icons mdr" style="color: rgb(72, 135, 72);">check_circle</span></a>
+                            {% else %}
+                                <a href="{{url_for('complete_activity', id=movie.id)}}"class="comp-btn"><span class="material-icons mdr">check_circle_outline</span></a>
+                            {% endif %}
+                        {% endif %}
+                        <div class="small-card-content">
+                            <p class="card-title">Watch Movie</p>
+                            <p class="card-sub-title">{{movie.title}} -{{movie.year}}</p>
+                            <div class="summary">
+                                <span class="white-text learn-more-text">SUMMARY- </span>
+                                <span class="movie-description">{{movie.overview}}</span>
+                            </div>
+                        
+                        </div>
+                    </div>    
+                {% endfor %}
+            {% endif%}
+            
+            
+            {% if ret.Book %}
+                {% for book in ret.Book %}
+                    <div class="small-card-1">
+                        <img src="{{url_for('static' , filename='images/book.webp') }}" alt="" srcset="" class="small-card-1-img">
+                        {% if not login %}
+                                {% if book.like %}
+                                    <a href="{{url_for('liked_activity', id=book.id)}}"class="watch-btn"><span class="material-icons mdr">thumb_up_alt</span></a>
+                                {% else %}
+                                    <a href="{{url_for('liked_activity', id=book.id)}}"class="watch-btn"><span class="material-icons mdr">thumb_up_off_alt</span></a>
+                                {% endif %}
+                                {% if book.completed %}
+                                    <a href="{{url_for('complete_activity', id=book.id)}}"class="comp-btn"><span class="material-icons mdr" style="color: rgb(72, 135, 72);">check_circle</span></a>
+                                {% else %}
+                                    <a href="{{url_for('complete_activity', id=book.id)}}"class="comp-btn"><span class="material-icons mdr">check_circle_outline</span></a>
+                                {% endif %}
+                            {% endif %}
+                        <div class="small-card-content">
+                            <p class="card-title">Read Book</p>
+                            <p class="card-sub-title">{{book.title}} -{{book.author}}</p>
+                            <div class="summary">
+                                <span class="white-text learn-more-text">SUMMARY- </span>
+                                <span class="movie-description">{{book.synopsis}}</span>
+                            </div>
+                        
+                        </div>
+                    </div>    
+                {% endfor %}
+            {% endif%}
+
+            {% if ret.Songs %}
+                {% for song in ret.Songs %}
+                    <div class="small-card-1">
+                        <img src="{{ url_for('static' , filename='images/song.jpg') }}" alt="" srcset="" class="small-card-1-img">
+                        {% if not login %}
+                            {% if song.like %}
+                                <a href="{{url_for('liked_activity', id=song.id)}}"class="watch-btn"><span class="material-icons mdr">thumb_up_alt</span></a>
+                            {% else %}
+                                <a href="{{url_for('liked_activity', id=song.id)}}"class="watch-btn"><span class="material-icons mdr">thumb_up_off_alt</span></a>
+                            {% endif %}
+                            {% if song.completed %}
+                                <a href="{{url_for('complete_activity', id=song.id)}}"class="comp-btn"><span class="material-icons mdr" style="color: rgb(72, 135, 72);">check_circle</span></a>
+                            {% else %}
+                                <a href="{{url_for('complete_activity', id=song.id)}}"class="comp-btn"><span class="material-icons mdr">check_circle_outline</span></a>
+                            {% endif %}
+                        {% endif %}
+                        <div class="small-card-content">
+                            <p class="card-title">Listen Music</p>
+                            <p class="card-sub-title">{{song.name}}</p>
+                            <p class="card-sub-title" style="font-size: 14px; color: #9b9b9b;">Artist -  {{song.artist}}</p>
+                            <p class="card-sub-title" style="font-size: 14px; color: #9b9b9b;">Released Date -  {{song.release_date}}</p>
+                        
+                        </div>
+                    </div>    
+                {% endfor %}
+            {% endif%}
+            
+
+            {% if ret.Sport %}
+                {% for sport in ret.Sport %}
+                    <div class="small-card-1">
+                        <img src="{{ url_for('static' , filename='images/sport3.jpg') }}" alt="" srcset="" class="small-card-1-img">
+                        {% if not login %}
+                            {% if sport.like %}
+                                <a href="{{url_for('liked_activity', id=sport.id)}}"class="watch-btn"><span class="material-icons mdr">thumb_up_alt</span></a>
+                            {% else %}
+                                <a href="{{url_for('liked_activity', id=sport.id)}}"class="watch-btn"><span class="material-icons mdr">thumb_up_off_alt</span></a>
+                            {% endif %}
+                            {% if sport.completed %}
+                                <a href="{{url_for('complete_activity', id=sport.id)}}"class="comp-btn"><span class="material-icons mdr" style="color: rgb(72, 135, 72);">check_circle</span></a>
+                            {% else %}
+                                <a href="{{url_for('complete_activity', id=sport.id)}}"class="comp-btn"><span class="material-icons mdr">check_circle_outline</span></a>
+                            {% endif %}
+                        {% endif %}
+                        <div class="small-card-content">
+                            <p class="card-title">Do Sports</p>
+                            <p class="card-sub-title">{{sport.Title}}</p>
+                            <p class="card-sub-title">Description</p>
+                            <div class="summary" ><span style="font-size: 14px;" class="movie-description">{{sport.Description}}</span>
+                            </div>
+                        
+                        </div>
+                    </div>    
+                {% endfor %}
+            {% endif%}
+
+            {% if ret.Fun %}
+                {% for sport in ret.Fun %}
+                    <div class="small-card-1">
+                        <img src="{{ url_for('static' , filename='images/fun.jpg') }}" alt="" srcset="" class="small-card-1-img">
+                        {% if not login %}
+                            {% if sport.like %}
+                                <a href="{{url_for('liked_activity', id=sport.id)}}"class="watch-btn"><span class="material-icons mdr">thumb_up_alt</span></a>
+                            {% else %}
+                                <a href="{{url_for('liked_activity', id=sport.id)}}"class="watch-btn"><span class="material-icons mdr">thumb_up_off_alt</span></a>
+                            {% endif %}
+                            {% if sport.completed %}
+                                <a href="{{url_for('complete_activity', id=sport.id)}}"class="comp-btn"><span class="material-icons mdr" style="color: rgb(72, 135, 72);">check_circle</span></a>
+                            {% else %}
+                                <a href="{{url_for('complete_activity', id=sport.id)}}"class="comp-btn"><span class="material-icons mdr">check_circle_outline</span></a>
+                            {% endif %}
+                        {% endif %}
+                        <div class="small-card-content">
+                            <p class="card-title">Do Fun Activities</p>
+                            <p class="card-sub-title">{{sport.Title}}</p>
+                            <p class="card-sub-title">Description</p>
+                            <div class="summary" ></span><span class="movie-description" style="font-size: 14px;">{{sport.Description}}</span>
+                            </div>
+                        
+                        </div>
+                    </div>    
+                {% endfor %}
+            {% endif%}
+
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#home").removeClass('menu-list-item-highlighted');
+    $("#history").removeClass('menu-list-item-highlighted');
+    $("#analyze").addClass('menu-list-item-highlighted');
+    </script>
+
+{% endblock %}
+<!-- 
+<div class="small-card-1">
+    <img src="{{ url_for('static' , filename='images/song.jpg') }}" alt="" srcset="" class="small-card-1-img">
+    <a href="" class="watch-btn"><span class="material-icons mdr">thumb_up_off_alt</span></a>
+    <a href="" class="comp-btn"><span class="material-icons mdr" >check_circle</span></a>
+    <div class="small-card-content">
+        <p class="card-title">Watch Movie</p>
+        <p class="card-sub-title">Intersteller -2012</p>
+        <div class="summary"><span class="white-text learn-more-text">SUMMARY- </span><span class="movie-description">A group of elderly people are giving interviews about having lived in a climate of crop blight and constant dust reminiscent of The Great 
+            Depression of the 1930's. The first one seen is an elderly woman stating her father was a farmer, but did not start out that way. </span>
+        </div>
+    
+    </div>
+</div>
+<div class="small-card-1">
+    <img src="{{ url_for('static' , filename='images/fun.jpg') }}" alt="" srcset="" class="small-card-1-img">
+    <div class="watch-btn"><span class="material-icons mdr">thumb_up_off_alt</span></div>
+    <div class="small-card-content">
+        <p class="card-title">Watch Movie</p>
+        <p class="card-sub-title">Intersteller -2012</p>
+        <div class="summary"><span class="white-text learn-more-text">SUMMARY- </span><span class="movie-description">A group of elderly people are giving interviews about having lived in a climate of crop blight and constant dust reminiscent of The Great 
+            Depression of the 1930's. The first one seen is an elderly woman stating her father was a farmer, but did not start out that way. </span>
+        </div>
+    
+    </div>
+</div>
+<div class="small-card-1">
+    <img src="{{ url_for('static' , filename='images/sport3.jpg') }}" alt="" srcset="" class="small-card-1-img">
+    <div class="watch-btn"><span class="material-icons mdr">thumb_up_alt</span></div>
+    <div class="small-card-content">
+        <p class="card-title">Watch Movie</p>
+        <p class="card-sub-title">Intersteller -2012</p>
+        <div class="summary"><span class="white-text learn-more-text">SUMMARY- </span><span class="movie-description">A group of elderly people are giving interviews about having lived in a climate of crop blight and constant dust reminiscent of The Great 
+            Depression of the 1930's. The first one seen is an elderly woman stating her father was a farmer, but did not start out that way. </span>
+        </div>
+    
+    </div>
+</div> -->

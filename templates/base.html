@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moody AI</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href="{{ url_for('static' , filename='css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="mnavbar">
+
+        <div class="col-md-12 nav-bar navbar-light main-nav">
+            <div class="navtitle col-md-2">
+                Moody.ai
+            </div>
+            <div style="flex: 4; display: flex;">
+            {% if login %}
+                <ul class="menu-list" style="margin-left: 420px;">
+                    <li class="menu-list-item menu-list-item-highlighted" id="home"><a href="{{url_for('home')}}">Home</a></li>
+                    <li class="menu-list-item" id="analyze"><a href="{{url_for('analyze')}}">Analyze</a></li>
+                    <li class="menu-list-item" id="analyze"><a href="{{url_for('login')}}">Login</a></li>
+                    <li class="menu-list-item" id="history"><a href="{{url_for('signup')}}">Signup</a></li>
+                </ul>
+            {% else %}
+                <ul class="menu-list" style="margin-left: 320px;">
+                    <li class="menu-list-item menu-list-item-highlighted" id="home"><a href="{{url_for('home')}}">Home</a></li>
+                    <li class="menu-list-item" id="analyze"><a href="{{url_for('analyze')}}">Analyze</a></li>
+                    <li class="menu-list-item" id="history"><a href="{{url_for('history')}}">History</a></li>
+                    <li class="menu-list-item" id="history"><a href="{{url_for('preference')}}">Preference</a></li>
+                    <li class="menu-list-item" id="history"><a href="{{url_for('logout')}}">Logout</a></li>
+                </ul>
+                <div class="right-side-nav" style="margin-left: 430px;">
+                    <div class="notification">
+                        <img src="{{ url_for('static' , filename='images/notification.png') }}" alt="">
+                    </div>
+                    <div class="profile-img">
+                        <img src="{{ url_for('static' , filename='images/man_login.png') }}" alt="">
+                    </div>
+                </div>
+            {% endif %}
+
+        </div>
+        </div>
+    </div>
+    {% for message in get_flashed_messages() %}
+            <div class="error"><p  style="margin:auto;">{{ message }}</p></div>
+    {% endfor %}
+    {% block content %}
+    {% endblock %}
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</html>

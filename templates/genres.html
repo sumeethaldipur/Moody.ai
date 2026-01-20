@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="right-side-img-container">
+    </div>
+    <div class="left-side-img-container">
+    </div>
+    <div class="main-container">
+        
+        <form class="preference-card" method="post">
+            <div class="main-title-login text-center">
+                Moody.ai
+            </div>
+            <p class="text-center">Select Your Prefered Categories</p>
+            
+            <div class="pref-main-card" style="flex-wrap: wrap;">
+                {% for key in data %}
+                    {% if data[key] %}
+                    <input class="genere-in" type="checkbox" id="{{key}}" name="pref" value="{{key}}" checked>
+                    {% else %}
+                    <input class="genere-in" type="checkbox" id="{{key}}" name="pref" value="{{key}}">
+                    {% endif %}
+                    <label for="{{key}}" class="ity">{{key}}</label>
+                {% endfor %}
+            </div>
+
+              <!-- <div class="pref-main-card" style="flex-wrap: wrap;">
+                <input class="genere-in" type="checkbox" id="Family" name="pref" value="Family">
+                <label for="Family" class="ity">Family</label>
+                <input class="genere-in" type="checkbox" id="Drama" name="pref" value="Drama">
+                <label for="Drama" class="ity">Drama</label>
+                <input class="genere-in" type="checkbox" id="Musical" name="pref" value="Musical">
+                <label for="Musical" class="ity">Musical</label>
+                <input class="genere-in" type="checkbox" id="Fantasy" name="pref" value="Fantasy">
+                <label for="Fantasy" class="ity">Fantasy</label>
+                <input class="genere-in" type="checkbox" id="Action" name="pref" value="Action">
+                <label for="Action" class="ity">Action</label>
+                <input class="genere-in" type="checkbox" id="Science Fiction" name="pref" value="Science Fiction">
+                <label for="Science Fiction" class="ity">Science Fiction</label>
+                <input class="genere-in" type="checkbox" id="Thriller" name="pref" value="Thriller">
+                <label for="Thriller" class="ity">Thriller</label>
+                <input class="genere-in" type="checkbox" id="Comedy" name="pref" value="Comedy">
+                <label for="Comedy" class="ity">Comedy</label>
+                <input class="genere-in" type="checkbox" id="Romance" name="pref" value="Romance">
+                <label for="Romance" class="ity">Romance</label>
+                <input class="genere-in" type="checkbox" id="Horror" name="pref" value="Horror">
+                <label for="Horror" class="ity">Horror</label>
+                <input class="genere-in" type="checkbox" id="Mystery" name="pref" value="Mystery">
+                <label for="Mystery" class="ity">Mystery</label>
+                <input class="genere-in" type="checkbox" id="Adventure" name="pref" value="Adventure">
+                <label for="Adventure" class="ity">Adventure</label>
+                <input class="genere-in" type="checkbox" id="Sport" name="pref" value="Sport">
+                <label for="Sport" class="ity">Sport</label>
+                <input class="genere-in" type="checkbox" id="History" name="pref" value="History">
+                <label for="History" class="ity">History</label>
+                <input class="genere-in" type="checkbox" id="Travel" name="pref" value="Travel">
+                <label for="Travel" class="ity">Travel</label>
+              </div> -->
+
+            <button type="submit" style="margin-left: 165px;" class="login-btn text-center">
+                Submit
+            </button>
+        </form>
+    </div>
+{% endblock %}

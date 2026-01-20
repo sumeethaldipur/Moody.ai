@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <div class="right-side-img-container">
+    </div>
+    <div class="left-side-img-container">
+    </div>
+    <div class="main-container">
+        
+        <form class="preference-card" method="post">
+            <div class="main-title-login text-center">
+                Moody.ai
+            </div>
+            <p class="text-center">Select Your Prefered Categories</p>
+            
+              <div class="pref-main-card">
+                <div class="pref-item">
+                  {% if data.movie %}
+                  <input type="checkbox" id="movie" name="pref" value="movie" checked>
+                  {% else %}
+                  <input type="checkbox" id="movie" name="pref" value="movie" >
+                  {% endif %}
+                  <label for="movie" class="itx"><span class="material-icons mdl" style="margin-left: 20px;">movie</span><br>Watch Movies</label>
+                </div>
+                <div class="pref-item">
+                  {% if data.book %}
+                  <input type="checkbox" id="book" name="pref" value="book" checked>
+                  {% else %}
+                  <input type="checkbox" id="book" name="pref" value="book" >
+                  {% endif %}
+                  <label for="book" class="itx"> <span class="material-icons mdl" style="margin-left: 20px;">auto_stories</span><br>Read Books</label>
+                </div >
+                <div class="pref-item">
+                  {% if data.songs %}
+                  <input type="checkbox" id="song" name="pref" value="songs" checked>
+                  {% else %}
+                  <input type="checkbox" id="song" name="pref" value="songs" >
+                  {% endif %}
+                  <label for="song" class="itx"><span class="material-icons mdl">music_note</span><br>Listen Songs</label>
+                </div>
+                <div class="pref-item">
+                  {% if data.sport %}
+                  <input type="checkbox" id="sport" name="pref" value="sport" checked>
+                  {% else %}
+                  <input type="checkbox" id="sport" name="pref" value="sport" >
+                  {% endif %}
+                  <label for="sport" class="itx"><span class="material-icons mdl">sports_soccer</span><br>Do Sports</label>
+                </div>
+                <div class="pref-item" >
+                  {% if data.fun %}
+                  <input type="checkbox" id="fun" name="pref" value="fun" checked>
+                  {% else %}
+                  <input type="checkbox" id="fun" name="pref" value="fun" >
+                  {% endif %}
+                  <label for="fun" class="itx"><span class="material-icons mdl" style="margin-left: 20px;">sentiment_satisfied_alt</span><br>Fun Activites</label>
+                </div>
+              </div>
+
+            <button type="submit" style="margin-left: 165px;" class="login-btn text-center">
+                Submit
+            </button>
+        </form>
+    </div>
+{% endblock %}
