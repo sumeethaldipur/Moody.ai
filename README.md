@@ -6,5 +6,9 @@ Based on the detected emotion, Moody.ai recommends curated activities across mul
 
 Designed with mental health awareness in mind, Moody.ai aims to help users better understand their emotional state and take actionable steps to uplift their mood, offering potential applications in self-care tools, mood tracking platforms, and assistive systems for mental health support.
 
+A research paper has been published based on this project in the 4th International Conference for Emerging Technology (INCET)
+
+Paper Link - https://ieeexplore.ieee.org/document/10169983
+
 ### This is a group project by Sumeet Haldipur, Pritam Gaikwad and Aryan Dhami for Sardar Patel Institute of Technology
 
