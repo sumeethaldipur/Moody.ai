@@ -5,3 +5,6 @@ Moody.ai is an emotion-aware recommendation system that detects a user’s mood 
 Based on the detected emotion, Moody.ai recommends curated activities across multiple domains including movies, music, books, sports, and leisure pursuits. The platform supports both generalized recommendations for anonymous users and adaptive, personalized recommendations for authenticated users by incorporating historical activity engagement and post-activity mood feedback. The recommendation engine combines popularity-based ranking with content-based filtering using cosine similarity to continuously refine suggestions over time.
 
 Designed with mental health awareness in mind, Moody.ai aims to help users better understand their emotional state and take actionable steps to uplift their mood, offering potential applications in self-care tools, mood tracking platforms, and assistive systems for mental health support.
+
+### This is a group project by Sumeet Haldipur, Pritam Gaikwad and Aryan Dhami for Sardar Patel Institute of Technology
+
